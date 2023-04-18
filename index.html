@@ -10,12 +10,12 @@
         <div>hoge</div>
         <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
         <script>
+            // この中にDOMが完全に読み込まれた後に実行したいスクリプトを記述します。
             document.addEventListener("DOMContentLoaded", function() {
-                    // この中にDOMが完全に読み込まれた後に実行したいスクリプトを記述します。
-                    // 例えば、DOM要素にイベントリスナを追加する処理など。
+                // 例えば、DOM要素にイベントリスナを追加する処理など。
                 const dfMessenger = document.querySelector('df-messenger');
                 dfMessenger.addEventListener('df-messenger-loaded', function (event) {
-                    // console.log('window opened')
+                    console.log('chat opened')
                     const payload = [
                     {
                         "type": "chips",
@@ -31,7 +31,7 @@
                             }
                         ]
                     }];
-                dfMessenger.renderCustomText('こんにちは！\n以下のことにお答えできます');
+                dfMessenger.renderCustomText('こんにちは！\nヒーロー社チャットボットは以下のことにお答えできます');
                 dfMessenger.renderCustomCard(payload);
                 });
             });

@@ -9,6 +9,10 @@
     <body>
         <div>hoge</div>
         <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        const dfMessenger = document.querySelector('df-messenger');
+dfMessenger.addEventListener('df-messenger-loaded', function (event) {
+  console.log('window opened')
+});
         <df-messenger
           intent="WELCOME"
           chat-title="BotTest"
